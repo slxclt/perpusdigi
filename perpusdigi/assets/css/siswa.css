@@ -1,0 +1,435 @@
+/* 🌐 Global */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7ff;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  transition: background 0.4s, color 0.4s;
+}
+
+.fade-in {
+  animation: fadeIn 0.7s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌙 Navbar */
+.new-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: #333;
+}
+
+.logout-btn {
+  text-decoration: none;
+  background: #ff4b5c;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.logout-btn:hover {
+  background: #e13d4d;
+}
+
+.theme-toggle {
+  margin-right: 15px;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* 🏠 Konten */
+.dashboard-container {
+  max-width: 1100px;
+  margin: 50px auto;
+  text-align: center;
+  padding: 20px;
+}
+/* 👋 Kartu selamat datang */
+.welcome-card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+  transition: background 0.3s;
+}
+
+.brand {
+  color: #2f7bff;
+  font-weight: 600;
+}
+
+/* 📊 Statistik */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+
+}
+
+.stat-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card img {
+  width: 65px;
+  height: 65px;
+  margin-bottom: 10px;
+}
+
+.stat-card h4 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2f7bff;
+}
+
+/* 📚 Aksi Card */
+.action-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.card-action {
+  background: #fff;
+  border-radius: 20px;
+  width: 300px;
+  padding: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card-action:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.card-img {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.btn-action {
+  display: inline-block;
+  text-decoration: none;
+  background: #2f7bff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.3s, opacity 0.3s;
+}
+
+.btn-action:hover {
+  opacity: 0.85;
+}
+
+/* ✨ Quote */
+.quote {
+  margin-top: 40px;
+  font-style: italic;
+  color: #444;
+}
+
+/* 🌑 Dark Mode */
+body.dark-mode {
+  background: #0d1117;
+  color: #f5f5f5;
+}
+
+body.dark-mode .new-navbar {
+  background: #161b22;
+  box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .nav-logo {
+  color: #ffffff;
+}
+
+body.dark-mode .logout-btn {
+  background: #e63946;
+}
+
+body.dark-mode .welcome-card,
+body.dark-mode .stat-card,
+body.dark-mode .card-action {
+  background: #1e242c;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+  color: #f5f5f5;
+}
+
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode p,
+body.dark-mode .brand,
+body.dark-mode .quote {
+  color: #f5f5f5 !important;
+}
+
+body.dark-mode .btn-action {
+  background: #3b82f6;
+  color: #fff;
+}
+
+body.dark-mode .btn-action:hover {
+  background: #2563eb;
+}
+
+body.dark-mode .stat-card p {
+  color: #60a5fa;
+}
+/* ===== siswa.css ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f6f7fb;
+  color: #333;
+}
+
+/* 🌙 Navbar */
+.new-navbar {
+  background: linear-gradient(135deg, #007bff, #4e54c8);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.new-navbar .nav-logo {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.new-navbar .logout-btn {
+  background: #fff;
+  color: #4e54c8;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.new-navbar .logout-btn:hover {
+  background: #ececff;
+  transform: translateY(-2px);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  margin-right: 15px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+/* 📦 Konten Umum */
+.dashboard-container, .container-custom {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: #e7e7e7;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+h3, h2 {
+  text-align: center;
+  color: #4e54c8;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* 📊 Cards */
+.stat-card, .card-action {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.stat-card:hover, .card-action:hover {
+  transform: translateY(-5px);
+}
+
+.stat-card img, .card-action img {
+  width: 80px;
+  height: 80px;
+}
+
+.btn-action {
+  background: linear-gradient(135deg, #4e54c8, #007bff);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.btn-action:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5b5fd1, #1d8fff);
+}
+
+/* 📚 Tabel Buku dan Riwayat */
+table {
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+thead {
+  background: #4e54c8;
+  color: white;
+}
+tbody tr:hover {
+  background-color: #f1f3ff;
+}
+.btn-pinjam, .btn-dashboard, .btn-success {
+  background: linear-gradient(135deg, #4e54c8, #007bff);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn-pinjam:hover, .btn-dashboard:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5b5fd1, #1d8fff);
+}
+
+/* 🔦 DARK MODE */
+body.dark-mode {
+  background: #0d1117;
+  color: #f5f5f5;
+}
+
+body.dark-mode .dashboard-container,
+body.dark-mode .container-custom {
+  background: #161b22;
+  box-shadow: 0 4px 10px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .new-navbar {
+  background: linear-gradient(135deg, #1f2937, #111827);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .new-navbar .logout-btn {
+  background: #374151;
+  color: #f5f5f5;
+}
+
+body.dark-mode .new-navbar .logout-btn:hover {
+  background: #4b5563;
+}
+
+body.dark-mode thead {
+  background: #1f2937;
+}
+
+body.dark-mode tbody tr:hover {
+  background: #2d3748;
+}
+
+body.dark-mode .btn-action,
+body.dark-mode .btn-pinjam,
+body.dark-mode .btn-dashboard {
+  background: linear-gradient(135deg, #2563eb, #1e3a8a);
+}
+
+body.dark-mode h3, 
+body.dark-mode h2, 
+body.dark-mode p, 
+body.dark-mode td, 
+body.dark-mode th {
+  color: #f5f5f5;
+}
+.navbar {
+      background: linear-gradient(135deg, #007bff, #4e54c8);
+      padding: 0.8rem 2rem;
+    }
+    .navbar .brand {
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .navbar .nav-actions span {
+      color: #fff;
+    }
+    
+    

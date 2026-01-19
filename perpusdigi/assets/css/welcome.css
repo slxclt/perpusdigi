@@ -1,0 +1,241 @@
+/* 🎨 PerpusDigi Global Auth + Dashboard Theme */
+/* Tema modern dengan transisi halus dan darkmode penuh */
+
+:root {
+  --blue1: #2563eb;
+  --blue2: #4f46e5;
+  --light-bg: rgba(255, 255, 255, 0.8);
+  --dark-bg: rgba(15, 23, 42, 0.9);
+  --light-text: #1e293b;
+  --dark-text: #f8fafc;
+  --transition-speed: 0.5s;
+}
+
+* {
+  transition: background var(--transition-speed) ease,
+              color var(--transition-speed) ease,
+              border var(--transition-speed) ease;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: url("http://localhost/perpusdigi/assets/img/library.jpg") no-repeat center center/cover;
+  background-attachment: fixed;
+  color: var(--light-text);
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Overlay blur effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+  transition: background var(--transition-speed) ease;
+}
+
+body.dark::before {
+  background: rgba(15,23,42,0.85);
+}
+
+/* 🔹 Navbar */
+.navbar {
+  position: relative;
+  z-index: 5;
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  color: var(--light-text);
+  animation: slideDown 0.8s ease forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body.dark .navbar {
+  background: rgba(15,23,42,0.6);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  color: var(--dark-text);
+}
+
+.navbar .brand {
+  font-weight: 600;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.toggle-dark {
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 50%;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.toggle-dark:hover {
+  transform: scale(1.1);
+}
+
+/* 🔲 Form Container (Login / Register) */
+.auth-container {
+  z-index: 2;
+  margin: auto;
+  background: var(--light-bg);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  animation: scaleUp 0.9s ease forwards;
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+body.dark .auth-container {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.auth-container h3 {
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+input, select {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px;
+  color: var(--light-text);
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+body.dark input,
+body.dark select {
+  background: rgba(30,41,59,0.9);
+  border: 1px solid #475569;
+  color: var(--dark-text);
+}
+
+input:focus, select:focus {
+  border-color: var(--blue2);
+  outline: none;
+  box-shadow: 0 0 8px var(--blue2);
+}
+
+/* 🧩 Select Wrapper */
+.select-wrapper {
+  position: relative;
+}
+.select-wrapper::after {
+  content: "▾";
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--light-text);
+  transition: color var(--transition-speed);
+}
+body.dark .select-wrapper::after {
+  color: var(--dark-text);
+}
+
+/* 🔘 Buttons */
+.btn-login, .btn-register, .btn-primary {
+  background: linear-gradient(90deg, var(--blue1), var(--blue2));
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem;
+  color: #fff;
+  font-weight: 600;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(79,70,229,0.3);
+}
+
+.btn-register-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: var(--blue2);
+  text-decoration: none;
+}
+
+body.dark .btn-register-link {
+  color: #a5b4fc;
+}
+
+/* 🧭 Dashboard Card */
+.dashboard-box {
+  z-index: 2;
+  margin: 100px auto;
+  background: var(--light-bg);
+  padding: 2rem 2.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  max-width: 600px;
+  width: 90%;
+  backdrop-filter: blur(8px);
+  text-align: center;
+  animation: scaleUp 1s ease forwards;
+}
+
+body.dark .dashboard-box {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.dashboard-box h2 {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.dashboard-box p {
+  color: #475569;
+  font-size: 1.05rem;
+}
+body.dark .dashboard-box p {
+  color: #e2e8f0;
+}

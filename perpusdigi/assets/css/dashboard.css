@@ -1,0 +1,135 @@
+/* 🌆 Background dan Layout Utama */
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("http://localhost/perpusdigi/assets/img/library-bg.jpg") center/cover no-repeat fixed;
+  color: #222;
+  transition: background-color 0.4s, color 0.4s;
+  overflow-x: hidden;
+}
+
+body.dark {
+  background-color: #0d1117;
+  color: #f1f1f1;
+}
+
+/* 🧭 Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #2563eb;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: 0.4s;
+}
+
+.navbar .brand {
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+body.dark .navbar {
+  background: rgba(25, 25, 25, 0.85);
+}
+
+body.dark .navbar .brand {
+  color: #f8f8f8;
+}
+
+/* 🌙 Tombol Darkmode */
+.toggle-dark {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s;
+  color: #222;
+}
+
+body.dark .toggle-dark {
+  color: #fff;
+}
+
+.toggle-dark:hover {
+  transform: scale(1.15);
+}
+
+/* 🪟 Container */
+.app-container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 20px;
+}
+
+/* 📦 Card Dashboard */
+.card-custom {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+}
+
+body.dark .card-custom {
+  background: rgba(30, 30, 30, 0.85);
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+.card-custom h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon-img {
+  object-fit: contain;
+  width: 65px;
+  height: 60px;
+  margin-top: -20px;
+}
+
+/* 🔘 Tombol minimalis */
+.btn-primary {
+  background: #2563eb;           /* Warna biru lembut */
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.75rem;
+  font-weight: 600;
+  width: 100%;
+  transition: background 0.4s ease, 
+              transform 0.3s ease,
+              box-shadow 0.4s ease;
+  opacity: 0;
+  animation: fadeButton 1s 0.4s ease forwards;
+}
+
+@keyframes fadeButton {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;           /* Biru lebih gelap */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+}
+
+
